@@ -1,4 +1,5 @@
 import java.util.*;
+// ABSTRACTION
 
 // abstract class
 abstract class Employee {
