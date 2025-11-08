@@ -1,4 +1,5 @@
 import java.util.*;
+// ENCAPSULATION
 
 public class BankAccount {
     private String accountNumber;
