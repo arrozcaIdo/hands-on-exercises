@@ -1,5 +1,6 @@
 import java.util.*;
 
+// parent class
 class Shape{
     public double calculateArea(){
         return 0; // to be overridden
@@ -7,7 +8,7 @@ class Shape{
 }
 
 class Circle extends Shape{
-    private double radius;
+    private final double radius;
     public Circle(double radius){
         this.radius = radius;
     }
@@ -19,7 +20,7 @@ class Circle extends Shape{
 }
 
 class Rectangle extends Shape{
-    private double width, height;
+    private final double width, height;
 
     public Rectangle(double width, double height){
         this.width = width;
@@ -33,7 +34,7 @@ class Rectangle extends Shape{
 }
 
 class Triangle extends Shape{
-    private double base, height;
+    private final double base, height;
 
     public Triangle(double base, double height){
         this.base = base;
@@ -52,7 +53,39 @@ public class Shapes {
 
         Shape[] shapes = new Shape[3];
 
-        System.out.print("Enter radius: ")
-        shapes[0] = new Circle(radius);
+        for(int i = 0; i < 3; i++){
+            System.out.print("Enter shape type: ");
+            String type = sc.nextLine();
+
+            if(type.equalsIgnoreCase("Circle")){
+                System.out.print("Enter radius: ");
+                double radius = sc.nextDouble();
+                sc.nextLine();
+                shapes[i] = new Circle(radius);
+                System.out.print("Area of Circle: " + shapes[i].calculateArea());
+
+            } else if(type.equalsIgnoreCase("Rectangle")){
+                System.out.print("Enter width: ");
+                double width = sc.nextDouble();
+                System.out.print("Enter height: ");
+                double height = sc.nextDouble();
+                shapes[i] = new Rectangle(width, height);
+                System.out.print("Area of Rectangle: %.2f\n\n" + shapes[i].calculateArea());
+
+            } else if(type.equalsIgnoreCase("Triangle")){
+                System.out.print("Enter base: ");
+                double base = sc.nextDouble();
+                System.out.print("Enter height: ");
+                double height = sc.nextDouble();
+                shapes[i] = new Triangle(base, height);
+                System.out.print("Area of Triangle: %.2f\n\n" + shapes[i].calculateArea());
+
+            } else {
+                System.out.println("Error: Invalid shape.");
+                i--; // try again
+            }
+        }
+
+        sc.close();
     }
 }
