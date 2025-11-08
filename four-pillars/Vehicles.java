@@ -50,10 +50,12 @@ class Motorcycle extends Vehicle{
     }
 }
 
+// main
 public class Vehicles {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
+        // no obj yet
         Vehicle vehicle = null;
 
         System.out.print("Enter vehicle type: ");
