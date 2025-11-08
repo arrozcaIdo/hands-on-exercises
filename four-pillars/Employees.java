@@ -61,7 +61,7 @@ class PartTimeEmployee extends Employee {
     }
 }
 
-// Main class
+
 public class Employees {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -78,7 +78,7 @@ public class Employees {
                 double dailyRate = sc.nextDouble();
                 System.out.print("Enter days worked: ");
                 int daysWorked = sc.nextInt();
-                sc.nextLine(); // clear buffer
+                sc.nextLine();
 
                 employee = new FullTimeEmployee(name, dailyRate, daysWorked);
 
@@ -89,7 +89,7 @@ public class Employees {
                 double hourlyRate = sc.nextDouble();
                 System.out.print("Enter hours worked: ");
                 int hoursWorked = sc.nextInt();
-                sc.nextLine(); // clear buffer
+                sc.nextLine();
 
                 employee = new PartTimeEmployee(name, hourlyRate, hoursWorked);
 
