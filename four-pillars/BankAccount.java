@@ -90,5 +90,6 @@ public class BankAccount {
 
     account.displayAccountInfo();
 
+    sc.close();
     }
 }
