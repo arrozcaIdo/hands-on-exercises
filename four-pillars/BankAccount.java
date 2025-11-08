@@ -40,7 +40,7 @@ public class BankAccount {
     public void deposit(double amount){
         if(amount > 0){
             balance += amount;
-            System.out.println("Successfully Deposited $" + amount);
+            System.out.println("Successfully Deposited ₱" + amount);
         } else{
             System.out.println("Error: Invalid deposit amount.");
         }
@@ -53,7 +53,7 @@ public class BankAccount {
             System.out.println("Error: Insufficient funds.");
         } else {
             balance -= amount;
-            System.out.println("Successfully withdrawn $" + amount);
+            System.out.println("Successfully withdrawn ₱" + amount);
         }
 
     }
@@ -62,7 +62,7 @@ public class BankAccount {
         System.out.println("\n---Account Information---");
         System.out.println("Account Holder: " + getAccountHolder());
         System.out.println("Account Number: " + getAccountNumber());
-        System.out.println("Current Balance: " + getBalance() + "\n");
+        System.out.println("Current Balance: ₱" + getBalance() + "\n");
     }
 
     public static void main(String[] args){
