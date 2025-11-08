@@ -55,8 +55,7 @@ public class Vehicles {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
-        // no obj yet
-        Vehicle vehicle = null;
+        Vehicle vehicle = null;   // no obj yet
 
         System.out.print("Enter vehicle type: ");
         String type = sc.nextLine();
