@@ -1,4 +1,5 @@
 import java.util.*;
+// POLYMORPHISM
 
 // parent class
 class Shape{
@@ -51,6 +52,7 @@ public class Shapes {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
+        // array
         Shape[] shapes = new Shape[3];
 
         for(int i = 0; i < 3; i++){
@@ -62,23 +64,25 @@ public class Shapes {
                 double radius = sc.nextDouble();
                 sc.nextLine();
                 shapes[i] = new Circle(radius);
-                System.out.print("Area of Circle: " + shapes[i].calculateArea());
+                System.out.printf("Area of Circle: %.2f\n\n", shapes[i].calculateArea());
 
             } else if(type.equalsIgnoreCase("Rectangle")){
                 System.out.print("Enter width: ");
                 double width = sc.nextDouble();
                 System.out.print("Enter height: ");
                 double height = sc.nextDouble();
+                sc.nextLine();
                 shapes[i] = new Rectangle(width, height);
-                System.out.print("Area of Rectangle: %.2f\n\n" + shapes[i].calculateArea());
+                System.out.printf("Area of Rectangle: %.0f\n\n", shapes[i].calculateArea());
 
             } else if(type.equalsIgnoreCase("Triangle")){
                 System.out.print("Enter base: ");
                 double base = sc.nextDouble();
                 System.out.print("Enter height: ");
                 double height = sc.nextDouble();
+                sc.nextLine();
                 shapes[i] = new Triangle(base, height);
-                System.out.print("Area of Triangle: %.2f\n\n" + shapes[i].calculateArea());
+                System.out.printf("Area of Triangle: %.0f\n\n", shapes[i].calculateArea());
 
             } else {
                 System.out.println("Error: Invalid shape.");
