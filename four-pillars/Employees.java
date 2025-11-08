@@ -34,7 +34,7 @@ class FullTimeEmployee extends Employee {
 
     @Override
     public void displayInfo() {
-        System.out.println("Salary: ₱" + calculateSalary());
+        System.out.println("Salary: PHP" + calculateSalary());
         companyPolicy();
     }
 }
@@ -56,7 +56,7 @@ class PartTimeEmployee extends Employee {
 
     @Override
     public void displayInfo() {
-        System.out.println("Salary: ₱" + calculateSalary());
+        System.out.println("Salary: PHP" + calculateSalary());
         companyPolicy();
     }
 }
