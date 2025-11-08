@@ -55,6 +55,7 @@ public class Shapes {
         // array
         Shape[] shapes = new Shape[3];
 
+        // will iterate 3 times to emulate sample input/output
         for(int i = 0; i < 3; i++){
             System.out.print("Enter shape type: ");
             String type = sc.nextLine();
