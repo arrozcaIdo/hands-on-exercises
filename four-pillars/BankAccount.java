@@ -7,23 +7,23 @@ public class BankAccount {
     private double balance;
 
     // getters and setters
-    public String getAccountNumber(){
+    public String getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(String accountNumber){
+    public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
 
-    public String getAccountHolder(){
+    public String getAccountHolder() {
         return accountHolder;
     }
 
-    public void setAccountHolder(String accountHolder){
+    public void setAccountHolder(String accountHolder) {
         this.accountHolder = accountHolder;
     }
 
-    public double getBalance(){
+    public double getBalance() {
         return balance;
     }
 
