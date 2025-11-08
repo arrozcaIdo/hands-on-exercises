@@ -46,7 +46,7 @@ class Motorcycle extends Vehicle{
     @Override
     public void displayDetails(){
         super.displayDetails();
-        System.out.println(" | Engine Type: " + engineType);
+        System.out.println(" | Engine: " + engineType);
     }
 }
 
