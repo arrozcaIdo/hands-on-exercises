@@ -2,6 +2,7 @@
 // Demonstrating the JLabel class.
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 public class LabelTest extends JFrame {
@@ -43,11 +44,12 @@ public class LabelTest extends JFrame {
 
         setSize(275, 170);
         setVisible(true);
-    }
+    } // end constructor
 
     public static void main(String args[]) {
 
         LabelTest application = new LabelTest();
         application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-}
+
+} // end class LabelTest
