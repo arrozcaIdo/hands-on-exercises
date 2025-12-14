@@ -24,7 +24,7 @@ public class LabelTest extends JFrame {
         container.add(label1);
 
         // JLabel constructor with string, Icon and alignment arguments
-        Icon bug = new ImageIcon("bug1.gif");
+        Icon bug = new ImageIcon("bug1.png");
         label2 = new JLabel(
                 "Label with text and icon",
                 bug,
