@@ -18,7 +18,7 @@ public class LabelTest extends JFrame {
         label1. setToolTipText("This is label1");
         container.add(label1);
 
-        Icon bug = new ImageIcon("bug1.png");
+        Icon bug = new ImageIcon("C://Users//Elyssa//IdeaProjects//hands-on-exercises//gui-javafx//roror.png");
         label2 = new JLabel("Label with text and icon", bug, SwingConstants.LEFT);
         label2.setToolTipText("This is label2");
         container.add(label2);
@@ -32,7 +32,7 @@ public class LabelTest extends JFrame {
         label3.setToolTipText("This is label3");
         container.add(label3);
 
-        setSize(275, 170);
+        setSize(275, 500);
         setVisible(true);
     } // end constructor
 
