@@ -70,7 +70,7 @@ public class test1 extends JPanel {
         JFrame frame = new JFrame("ror");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(new test1());
-        frame.setSize(400, 400);
+        frame.setSize(300, 340);
         frame.setVisible(true);
     }
 }
