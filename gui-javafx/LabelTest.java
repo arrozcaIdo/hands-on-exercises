@@ -7,29 +7,29 @@ public class LabelTest extends JFrame {
 
     //setup GUI
     public LabelTest(){
-        super("Testing JLabel");
+        super("TITLE");
 
         //get content pane and set layout
         Container container = getContentPane();
         container.setLayout(new FlowLayout());
 
         // JLabel constructor with a string argument
-        label1 = new JLabel("Label with text");
-        label1. setToolTipText("This is label1");
+        label1 = new JLabel("Plain text.");
+        label1. setToolTipText("hello?");
         container.add(label1);
 
         Icon bug = new ImageIcon("C://Users//Elyssa//IdeaProjects//hands-on-exercises//gui-javafx//roror.png");
-        label2 = new JLabel("Label with text and icon", bug, SwingConstants.LEFT);
-        label2.setToolTipText("This is label2");
+        label2 = new JLabel("Text with Icon", bug, SwingConstants.LEFT);
+        label2.setToolTipText("big ass globe");
         container.add(label2);
 
         // JLabel constructor no arguments
         label3 = new JLabel();
-        label3.setText("Label with icon and text at bottom");
+        label3.setText("Icon, text at bottom");
         label3.setIcon(bug);
         label3.setHorizontalTextPosition(SwingConstants.CENTER);
         label3.setVerticalTextPosition(SwingConstants.BOTTOM);
-        label3.setToolTipText("This is label3");
+        label3.setToolTipText("hellooooooooooo");
         container.add(label3);
 
         setSize(275, 500);
