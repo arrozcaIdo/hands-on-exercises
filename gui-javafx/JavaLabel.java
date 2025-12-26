@@ -18,7 +18,6 @@ public class JavaLabel {
 
         Border border = BorderFactory.createLineBorder(Color.BLUE, 3);
 
-
         JLabel label = new JLabel();
         label.setText("Hello");
         label.setIcon(image);
@@ -32,15 +31,16 @@ public class JavaLabel {
         label.setBorder(border);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setHorizontalAlignment(JLabel.CENTER);
-        label.setBounds(100,0,250,250);
+        // label.setBounds(100,0,250,250);
 
 
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 500);
-        frame.setLayout(null);
+        //frame.setSize(500, 500);
+        //frame.setLayout(null);
         frame.setVisible(true);
         frame.add(label);
+        frame.pack();
     }
 
 }
