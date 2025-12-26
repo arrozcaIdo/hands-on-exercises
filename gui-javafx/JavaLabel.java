@@ -40,7 +40,7 @@ public class JavaLabel {
         //frame.setLayout(null);
         frame.setVisible(true);
         frame.add(label);
-        frame.pack();
+        frame.pack(); // add all components THEN pack
     }
 
 }
