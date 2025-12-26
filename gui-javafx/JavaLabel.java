@@ -1,5 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
+import javax.swing.border.Border;
+
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 // BROCODE
 public class JavaLabel {
@@ -7,6 +15,9 @@ public class JavaLabel {
         // JLabel = GUI display area for a string of text, image, or both
 
         ImageIcon image = new ImageIcon("C:/Users/Elyssa/IdeaProjects/hands-on-exercises/gui-javafx/roror.png");
+
+        Border border = BorderFactory.createLineBorder(Color.BLUE, 3);
+
 
         JLabel label = new JLabel();
         label.setText("Hello");
@@ -18,12 +29,16 @@ public class JavaLabel {
         label.setIconTextGap(-1); // set gap btwn text n img
         label.setBackground(Color.black);
         label.setOpaque(true); // display background color
-
+        label.setBorder(border);
+        label.setVerticalAlignment(JLabel.CENTER);
+        label.setHorizontalAlignment(JLabel.CENTER);
+        label.setBounds(100,0,250,250);
 
 
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
+        frame.setLayout(null);
         frame.setVisible(true);
         frame.add(label);
     }
