@@ -24,6 +24,14 @@ public class ClickCounter {
 		button.setBounds(150, 200, 200, 100);
 		button.setFont(new Font("Arial", Font.BOLD, 22));
 		frame.add(button);
+
+		JButton btnReset = new JButton();
+		btnReset.setBorder(new LineBorder(Color.BLACK));
+		btnReset.setText("reset :(");
+		btnReset.setBounds(250, 200, 200, 100);
+		btnReset.setFont(new Font("Arial", Font.BOLD, 22));
+		btnReset.setForeground(new Color(20, 80, 50));
+		frame.add(btnReset);
 		
 		displayLabel.setText("CLICKS: 0");
 		displayLabel.setBounds(150,100,500,50);
@@ -39,6 +47,10 @@ public class ClickCounter {
 			}
 		});
 		
+		btnReset.addActionListener(e -> {
+			count = 0;
+			displayLabel.setText("CLICKS: " + count);
+		});
 		
 		frame.setVisible(true);
 	}
