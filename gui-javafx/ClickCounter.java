@@ -43,7 +43,7 @@ public class ClickCounter {
 			count++;
 			displayLabel.setText("CLICKS: " + count);
 			if(count % 10 == 0) {
-				JOptionPane.showMessageDialog(frame, "WOAH", "You clicked TEN TIMES!! ", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(frame, "You clicked TEN TIMES!", "WOAH", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		
