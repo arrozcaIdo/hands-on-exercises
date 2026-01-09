@@ -1,72 +1,71 @@
 package tries;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+import java.awt.event.*;
 
-class Product {
-    // fields
-    public String name;
-    public double basePrice;
 
-    public Product(String name, double basePrice) {
-        this.name = name;
-        this.basePrice = basePrice;
-    }
+class Product{
+	public String name;
+	public double basePrice;
+	
+	public Product(String name, double basePrice) {
+		this.name = name;
+		this.basePrice = basePrice;
+	}
 }
 
 public class gew extends JFrame implements ActionListener {
-    // instances of swing classes
-    private JComboBox<String> bookComboBox; //<String> is needed
-    private JRadioButton[] editions; // array. iterate thru edition 1-4 to set the same dimension
-    private ButtonGroup editionGroup;
-    private JCheckBox discountCheckBox;
-    private JTextField priceField, quantityField, salesAmountField;
-    private JButton computeButton, clearButton;
-
-    // instances of Product class
-    private Product javaProduct = new Product("JAVA PROGRAMMING", 500.00);
-    private Product cSharpProduct = new Product("C# PROGRAMMING", 600.00);
-    private Product pythonProduct = new Product("PYTHON PROGRAMMING", 550.00);
-    private Product phpProduct = new Product("PHP PROGRAMMING", 650.00);
-
-    private final double DISCOUNT_RATE = 0.10;
-
-    public gew() { 
-        setTitle("MJN Book Store");
-        setSize(600, 450);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // static constant (always uppercase) that belongs to the class, which is why JFrame is called first.
-        setLayout(null);
-        setResizable(false);
-
-        initUI();
-
-        setLocationRelativeTo(null);
-        setVisible(true);
-    }
-    
-    private void initUI() {
-        JLabel titleLabel = new JLabel("MJN Book Store", JLabel.CENTER); // title = JLabel
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 18)); // new Font instance with parameters. like static constants, BOLD is a setting that must be uppercase and calls the class name first
-        titleLabel.setBounds(0, 10, 600, 30);
-        add(titleLabel);
-
-        add(new JLabel("PLEASE PICK A BOOK:")).setBounds(50, 60, 150, 25);
-        String[] bookList = {"", "JAVA PROGRAMMING", "C# PROGRAMMING", "PYTHON PROGRAMMING", "PHP PROGRAMMING"}; // initialize array of String
-        bookComboBox = new JComboBox<>(bookList); // use '<>' again. insert the array of String in the JComboBox object
-        bookComboBox.setBounds(220, 60, 300, 25); 
-        bookComboBox.addActionListener(this); // refer to 
-        add(bookComboBox);
-
-        add(new JLabel("EDITION")).setBounds(50, 100, 100, 25);
-        editions = new JRadioButton[]{
-            new JRadioButton("1st Edition"), new JRadioButton("2nd Edition"),
-            new JRadioButton("3rd Edition"), new JRadioButton("4th Edition")
-        };
-        
-        int[] xPos = {50, 50, 220, 220};
-        int[] yPos = {130, 160, 130, 160};
-        editionGroup = new ButtonGroup();
+	private JComboBox<String> bookComboBox;
+	private JRadioButton[] editions;
+	private ButtonGroup editionGroup;
+	private JCheckBox discountCheckBox;
+	private JTextField priceField, quantityField, salesAmountField;
+	private JButton computeButton, clearButton;
+	
+	private Product javaProduct = new Product("JAVA PROGRAMMING", 500.00);
+	private Product cSharpProduct = new Product("C# PROGRAMMING", 600.00);
+	private Product pythonProduct = new Product("PYTHON PROGRAMMING", 550.00);
+	private Product phpProduct = new Product("PHP PROGRAMMING", 650.00);
+	
+	private final double DISCOUNT_RATE = 0.10;
+	
+	public gew() {
+		setTitle("Local Library");
+		setSize(600,459);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(null);
+		setResizable(false);
+		
+		initUI();
+		
+		setLocationRelativeTo(null);
+		setVisible(true);
+	
+	}
+	
+	private void initUI() {
+		JLabel titleLabel = new JLabel("Local Library", JLabel.CENTER);
+		titleLabel.setFont(new Font("Arial", Font.BOLD, 18));
+		titleLabel.setBounds(0, 10, 600, 30);
+		add(titleLabel);
+		
+		add(new JLabel("PLEASE PICK A BOOK:")).setBounds(50, 60, 150, 25);
+		String[] bookList = {"", "JAVA PROGRAMMING", "C# PROGRAMMING", "PYTHON PROGRAMMING", "PHP PROGRAMMING"};
+		bookComboBox = new JComboBox<>(bookList);
+		bookComboBox.setBounds(200, 60, 250, 25);
+		bookComboBox.addActionListener(this);
+		add(bookComboBox);
+		
+		add(new JLabel("EDITION")).setBounds(50,100,100,25);
+		editions = new JRadioButton[] {
+				new JRadioButton("1st Edition"), new JRadioButton("2nd Edition"), new JRadioButton("3rd Edition"), new JRadioButton("4th Edition")
+		};
+		
+		int[] xPos = {50, 50, 220, 220};
+		int[] yPos = {130,160,130,160};
+		editionGroup = new ButtonGroup();
+		
 
         for (int i = 0; i < editions.length; i++) {
             editions[i].setBounds(xPos[i], yPos[i], 120, 25);
@@ -180,7 +179,8 @@ public class gew extends JFrame implements ActionListener {
         salesAmountField.setText("");
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new gew());
-    }
+	
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(() -> new gew());
+	}
 }
