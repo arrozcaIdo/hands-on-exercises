@@ -7,38 +7,42 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class brocode extends JFrame implements ActionListener{
-	JTextField textField = new JTextField();
-	JButton submit = new JButton("Submit");
+	//JTextField textField = new JTextField();
+	JButton button = new JButton("Submit");
+	JCheckBox check = new JCheckBox("I agree");
 	
 	brocode(){
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new FlowLayout());
-
-		textField.setPreferredSize(new Dimension(250, 40));
-		textField.setFont(new Font("Arial", Font.BOLD, 35));
-		textField.setForeground(Color.WHITE);
-		textField.setBackground(Color.BLACK);
-		submit.addActionListener(this);
+		this.setTitle("pls agree");
+		String[] responses = {"YES BYE IHY", "NO I AGREE!!"}; 
 		
-
-		this.add(textField);
-		this.add(submit);
+		this.add(check);
+		check.setFocusable(false);
+		check.setFont(new Font("Arial", Font.ITALIC, 16));
+		button.addActionListener(e -> {
+			if(check.isSelected()) {
+			JOptionPane.showMessageDialog(null,"Success!", "Confidentiality Agreement", 1);
+			} else {
+				if(JOptionPane.showOptionDialog(null, "aw u dont agree w our terms?", "Confidentiality Agreement", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, responses, null ) == 0) {
+					JOptionPane.showMessageDialog(null, "kbye", "ok", 0);
+				} else {
+					JOptionPane.showMessageDialog(null,"YAY Success!", "Confidentiality Agreement", 1);
+				}
+				
+			}
+			});
+		
+		this.add(button);
 		this.pack();
 		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
 
-	}
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==submit) {
-			JOptionPane.showMessageDialog(null, "Hellooo " + textField.getText(), "NEW USER", 1);
-			textField.setEditable(false);
-			submit.setEnabled(false);
-		}
-	}
 	
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(() -> new brocode());
 		
 	}
+
 }
