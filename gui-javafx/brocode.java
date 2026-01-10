@@ -7,38 +7,45 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class brocode extends JFrame implements ActionListener{
-	//JTextField textField = new JTextField();
-	JButton button = new JButton("Submit");
-	JCheckBox check = new JCheckBox("I agree");
+	
+	JRadioButton button1 = new JRadioButton("Pizza");
+	JRadioButton button2 = new JRadioButton("Burger");
+	JRadioButton button3 = new JRadioButton("Hotdog");
+	
+	ButtonGroup group = new ButtonGroup();
+	
 	
 	brocode(){
 		this.setLayout(new FlowLayout());
-		this.setTitle("pls agree");
-		String[] responses = {"YES BYE IHY", "NO I AGREE!!"}; 
+		this.setTitle("RADIO BUTTON");
 		
-		this.add(check);
-		check.setFocusable(false);
-		check.setFont(new Font("Arial", Font.ITALIC, 16));
-		button.addActionListener(e -> {
-			if(check.isSelected()) {
-			JOptionPane.showMessageDialog(null,"Success!", "Confidentiality Agreement", 1);
-			} else {
-				if(JOptionPane.showOptionDialog(null, "aw u dont agree w our terms?", "Confidentiality Agreement", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, responses, null ) == 0) {
-					JOptionPane.showMessageDialog(null, "kbye", "ok", 0);
-				} else {
-					JOptionPane.showMessageDialog(null,"YAY Success!", "Confidentiality Agreement", 1);
-				}
-				
-			}
-			});
 		
-		this.add(button);
+		this.add(button1);
+		this.add(button2);
+		this.add(button3);
+
+		group.add(button1);
+		group.add(button2);
+		group.add(button3);
+		
+		button1.addActionListener(e -> {
+			JOptionPane.showMessageDialog(null, "You got Pizza!", "Congratulations!", 1);
+		});
+		
+		button2.addActionListener(e -> {
+			JOptionPane.showMessageDialog(null, "You got Burger!", "Congratulations!", 1);
+		});
+		
+		button3.addActionListener(e -> {
+			JOptionPane.showMessageDialog(null, "You got Hotdog!", "Congratulations!", 1);
+		});
+		
+		
 		this.pack();
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}
-
 	
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(() -> new brocode());
